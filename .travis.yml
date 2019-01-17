@@ -1,5 +1,5 @@
 script:
-  - npm build
+  - npm run build
 language: node_js
 node_js:
   - '8.10'
@@ -10,7 +10,7 @@ cache:
     - lib
     - src
   script:
-    - npm build
+    - npm run build
   deploy:
     - provider: script
       skip_cleanup: true
