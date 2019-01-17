@@ -1,0 +1,28 @@
+service: combine
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+  environment:
+    SERVICE: ${self:service}
+    STAGE: ${self:provider.stage}
+    REGION: ${opt:region, self:provider.region}
+
+plugins:
+  - serverless-offline
+  - serverless-prune-plugin
+
+custom:
+  prune:
+    automatic: true
+    number: 2
+
+functions:
+  combine:
+    handler: src/App.app
+    events:
+      - http:
+          method: POST
+          path: combine
+          cors: true

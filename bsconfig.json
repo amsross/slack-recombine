@@ -1,0 +1,23 @@
+{
+  "name": "slack-combinefm",
+  "version": "0.1.0",
+  "sources": {
+    "dir" : "src",
+    "subdirs" : true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".js",
+  "bs-dependencies": [
+    "bs-axios",
+    "@glennsl/bs-json",
+    "bs-node-http"
+  ],
+  "warnings": {
+    "error" : "+101"
+  },
+  "namespace": true,
+  "refmt": 3
+}

@@ -1,0 +1,8 @@
+.DS_Store
+.bsb.lock
+.merlin
+.serverless
+.vscode
+/lib/bs/
+/node_modules/
+npm-debug.log
