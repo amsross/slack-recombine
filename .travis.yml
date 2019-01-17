@@ -1,5 +1,5 @@
 script:
-  - npm test
+  - npm build
 language: node_js
 node_js:
   - '8.10'
@@ -7,6 +7,8 @@ install: npm install
 cache:
   directories:
     - node_modules
+    - lib
+    - src
   script:
     - npm build
   deploy:
