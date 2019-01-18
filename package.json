@@ -2,7 +2,8 @@
   "name": "slack-recombine",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world && browserify src/App.js --node --standalone handler -g uglifyify > handler.js",
+    "build": "bsb -make-world",
+    "bundle": "browserify src/App.js --node --standalone handler -g uglifyify > handler.js",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "local": "AWS_REGION=us-east-1 sls offline start",
