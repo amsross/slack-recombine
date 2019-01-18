@@ -6,7 +6,6 @@ script:
   - npm run build
 cache:
   directories:
-    - node_modules
     - dist
 deploy:
   - provider: script
