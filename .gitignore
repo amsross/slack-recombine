@@ -1,9 +1,11 @@
 .DS_Store
 .bsb.lock
+.cache
 .merlin
 .serverless
 .vscode
+/**/*.js
+/dist
 /lib/bs/
 /node_modules/
 npm-debug.log
-/**/*.js
