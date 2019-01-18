@@ -34,6 +34,7 @@ type payload = {
 type buffer;
 [@bs.send] external toString: buffer => string = "toString";
 
+[@bs.deriving abstract]
 type response = {
   statusCode: int,
   body: string,
