@@ -20,7 +20,7 @@ custom:
 
 functions:
   combine:
-    handler: src/App.app
+    handler: handler.app
     events:
       - http:
           method: POST

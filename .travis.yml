@@ -6,9 +6,7 @@ script:
   - npm run build
 cache:
   directories:
-    - node_ modules
-    - lib
-    - src
+    - node_modules
 deploy:
   - provider: script
     skip_cleanup: true
