@@ -1,1 +1,1 @@
-# slack-recombine [![Build Status](https://travis-ci.org/amsross/slack-recombine.svg?branch=master)](https://travis-ci.org/amsross/slack-recombine)
+# slack-recombine [![Build Status](https://travis-ci.org/amsross/slack-recombine.svg?branch=master)](https://travis-ci.org/amsross/slack-recombine) [![Greenkeeper badge](https://badges.greenkeeper.io/amsross/slack-recombine.svg)](https://greenkeeper.io/)
