@@ -2,7 +2,7 @@
   "name": "slack-recombine",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world && parcel build src/App/.js",
+    "build": "bsb -make-world && parcel build src/App.js",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "local": "AWS_REGION=us-east-1 sls offline start",
