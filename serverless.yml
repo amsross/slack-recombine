@@ -18,9 +18,16 @@ custom:
     automatic: true
     number: 2
 
+package:
+  exclude:
+    - ./**
+    - ./*.*
+  include:
+    - handler.js
+
 functions:
   combine:
-    handler: src/App.app
+    handler: handler.app
     events:
       - http:
           method: POST
