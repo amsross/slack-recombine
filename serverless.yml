@@ -18,6 +18,13 @@ custom:
     automatic: true
     number: 2
 
+package:
+  exclude:
+    - ./**
+    - ./*.*
+  include:
+    - handler.js
+
 functions:
   combine:
     handler: handler.app
