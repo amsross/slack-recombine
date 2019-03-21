@@ -20,7 +20,7 @@
     "browserify": "^16.2.3",
     "bs-axios": "0.0.39",
     "bs-node-http": "^0.3.1",
-    "bs-platform": "^4.0.18",
+    "bs-platform": "^5.0.0",
     "bsb-js": "^1.1.7",
     "nodemon": "^1.18.9",
     "serverless": "^1.36.1",
