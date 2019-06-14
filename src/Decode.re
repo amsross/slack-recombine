@@ -13,7 +13,7 @@ let match_ = (match_: Js.Json.t): match_ =>
 
 let track = (track: Js.Json.t): track =>
   Json.Decode.{
-    type_: field("type", string, track),
+    type_: withDefault("album", field("type", string), track),
     name: field("name", string, track),
     service: field("service", string, track),
     externalId: field("externalId", string, track),
