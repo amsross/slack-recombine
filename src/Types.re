@@ -1,6 +1,7 @@
 type artist = {name: string};
 
 type match_ = {
+  [@bs.as "type"]
   type_: option(string),
   service: string,
   url: option(string),
@@ -8,6 +9,7 @@ type match_ = {
 };
 
 type track = {
+  [@bs.as "type"]
   type_: string,
   name: string,
   service: string,

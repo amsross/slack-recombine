@@ -29,11 +29,11 @@ let colors =
   |]);
 
 let buildAttachment: match_ => attachment =
-  match_ => {
-    color: match_.service->(k => getDefault("#FE4365", k, colors)),
-    author_name: match_.service,
-    author_link: match_.url->default(""),
-    author_icon: match_.artwork->default(""),
+  ({service, url, artwork}) => {
+    color: service->getDefault("#FE4365", _, colors),
+    author_name: service,
+    author_link: url->default(""),
+    author_icon: artwork->default(""),
   };
 
 let buildAttachments: array(match_) => array(attachment) =
@@ -47,9 +47,8 @@ let buildPayload: (Js.Dict.t(string), track) => payload =
   (parts, track) => {
     response_type: "in_channel",
     text:
-      Belt.Option.map(get(parts, "user_id"), user =>
-        "<@" ++ user ++ "> shared "
-      )
+      get(parts, "user_id")
+      ->Belt.Option.map(user => "<@" ++ user ++ "> shared ")
       ->default("")
       ++ "*_<https://combine.fm/"
       ++ track.service
