@@ -24,8 +24,8 @@ let main = (parts: Js.Dict.t(string)): Js.Promise.t(string) => {
 };
 
 let app: handler =
-  (evt, _ctx, callback) => {
-    let parts = evt |> bodyGet |> Js.Global.decodeURIComponent |> bodyToParts;
+  ({body}, _ctx, callback) => {
+    let parts = body |> Js.Global.decodeURIComponent |> bodyToParts;
 
     Js.Promise.(
       main(parts)

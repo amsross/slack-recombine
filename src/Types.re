@@ -37,7 +37,6 @@ type response = {
   body: string,
 };
 
-[@bs.deriving abstract]
 type event = {body: string};
 type context;
 type callback = (option(Js.Promise.error), response) => unit;
