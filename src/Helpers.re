@@ -29,18 +29,19 @@ let colors =
   |]);
 
 let buildAttachment: match_ => attachment =
-  match_ =>
-    attachment(
-      ~color=match_.service->(k => getDefault("#FE4365", k, colors)),
-      ~author_name=match_.service,
-      ~author_link=match_.url->default(""),
-      ~author_icon=match_.artwork->default(""),
-    );
+  match_ => {
+    color: match_.service->(k => getDefault("#FE4365", k, colors)),
+    author_name: match_.service,
+    author_link: match_.url->default(""),
+    author_icon: match_.artwork->default(""),
+  };
 
 let buildAttachments: array(match_) => array(attachment) =
   match_ =>
     Array.map(buildAttachment, match_)
-    |> filter(gt(0) <|| Js.String.length <|| author_linkGet);
+    |> filter(
+         gt(0) <|| Js.String.length <|| (({author_link}) => author_link),
+       );
 
 let buildPayload: (Js.Dict.t(string), track) => payload =
   (parts, track) =>

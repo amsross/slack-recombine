@@ -16,7 +16,6 @@ type track = {
   matches: array(match_),
 };
 
-[@bs.deriving abstract]
 type attachment = {
   color: string,
   author_name: string,
