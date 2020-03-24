@@ -23,7 +23,6 @@ type attachment = {
   author_icon: string,
 };
 
-[@bs.deriving abstract]
 type payload = {
   text: string,
   response_type: string,

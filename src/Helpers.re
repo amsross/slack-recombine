@@ -44,27 +44,26 @@ let buildAttachments: array(match_) => array(attachment) =
        );
 
 let buildPayload: (Js.Dict.t(string), track) => payload =
-  (parts, track) =>
-    payload(
-      ~response_type="in_channel",
-      ~text=
-        Belt.Option.map(get(parts, "user_id"), user =>
-          "<@" ++ user ++ "> shared "
-        )
-        ->default("")
-        ++ "*_<https://combine.fm/"
-        ++ track.service
-        ++ "/"
-        ++ track.type_
-        ++ "/"
-        ++ track.externalId
-        ++ "|"
-        ++ track.artist.name
-        ++ " - "
-        ++ track.name
-        ++ ">_*",
-      ~attachments=buildAttachments(track.matches),
-    );
+  (parts, track) => {
+    response_type: "in_channel",
+    text:
+      Belt.Option.map(get(parts, "user_id"), user =>
+        "<@" ++ user ++ "> shared "
+      )
+      ->default("")
+      ++ "*_<https://combine.fm/"
+      ++ track.service
+      ++ "/"
+      ++ track.type_
+      ++ "/"
+      ++ track.externalId
+      ++ "|"
+      ++ track.artist.name
+      ++ " - "
+      ++ track.name
+      ++ ">_*",
+    attachments: buildAttachments(track.matches),
+  };
 
 let bodyToParts: string => Js.Dict.t(string) =
   Js.Global.decodeURIComponent

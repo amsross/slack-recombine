@@ -13,8 +13,8 @@ let attachment = attachment =>
 let payload = payload =>
   Json.Encode.(
     object_([
-      ("response_type", string(payload->response_typeGet)),
-      ("text", string(payload->textGet)),
-      ("attachments", array(attachment, payload->attachmentsGet)),
+      ("response_type", string(payload.response_type)),
+      ("text", string(payload.text)),
+      ("attachments", array(attachment, payload.attachments)),
     ])
   );
