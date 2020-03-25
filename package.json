@@ -24,7 +24,7 @@
     "bsb-js": "^1.1.7",
     "nodemon": "^2.0.0",
     "serverless": "^1.45.1",
-    "serverless-offline": "^6.0.0",
+    "serverless-offline": "^6.1.1",
     "serverless-prune-plugin": "^1.3.2",
     "uglifyify": "^5.0.1"
   }
