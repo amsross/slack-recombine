@@ -2,7 +2,7 @@ service: combine
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs12.x
   stage: ${opt:stage, 'dev'}
   environment:
     SERVICE: ${self:service}
