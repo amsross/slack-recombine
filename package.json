@@ -16,7 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@glennsl/bs-json": "^5.0.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "browserify": "^16.5.2",
     "bs-axios": "0.0.43",
     "bs-platform": "^8.2.0",
