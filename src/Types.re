@@ -1,6 +1,7 @@
 type artist = {name: string};
 
 type match_ = {
+  [@bs.as "type"]
   type_: option(string),
   service: string,
   url: option(string),
@@ -8,6 +9,7 @@ type match_ = {
 };
 
 type track = {
+  [@bs.as "type"]
   type_: string,
   name: string,
   service: string,
@@ -16,7 +18,6 @@ type track = {
   matches: array(match_),
 };
 
-[@bs.deriving abstract]
 type attachment = {
   color: string,
   author_name: string,
@@ -24,7 +25,6 @@ type attachment = {
   author_icon: string,
 };
 
-[@bs.deriving abstract]
 type payload = {
   text: string,
   response_type: string,
@@ -34,13 +34,11 @@ type payload = {
 type buffer;
 [@bs.send] external toString: buffer => string = "toString";
 
-[@bs.deriving abstract]
 type response = {
   statusCode: int,
   body: string,
 };
 
-[@bs.deriving abstract]
 type event = {body: string};
 type context;
 type callback = (option(Js.Promise.error), response) => unit;

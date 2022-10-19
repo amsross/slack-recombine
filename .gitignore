@@ -4,8 +4,9 @@
 .merlin
 .serverless
 .vscode
-/**/*.js
 /dist
 /lib/bs/
+/lib/js/
 /node_modules/
+handler.js
 npm-debug.log

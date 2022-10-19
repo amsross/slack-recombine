@@ -24,15 +24,15 @@ let main = (parts: Js.Dict.t(string)): Js.Promise.t(string) => {
 };
 
 let app: handler =
-  (evt, _ctx, callback) => {
-    let parts = evt |> bodyGet |> Js.Global.decodeURIComponent |> bodyToParts;
+  ({body}, _ctx, callback) => {
+    let parts = body |> Js.Global.decodeURIComponent |> bodyToParts;
 
     Js.Promise.(
       main(parts)
-      |> then_(body => resolve(response(~statusCode=200, ~body)))
+      |> then_(body => resolve({statusCode: 200, body}))
       |> catch(err => {
            Js.Console.error(err);
-           resolve(response(~statusCode=500, ~body=Js.String.make(err)));
+           resolve({statusCode: 500, body: Js.String.make(err)});
          })
       |> then_(response => {
            callback(None, response);
