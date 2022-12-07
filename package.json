@@ -21,7 +21,7 @@
     "bs-axios": "0.0.43",
     "bs-platform": "^8.2.0",
     "bsb-js": "^1.1.7",
-    "serverless": "^1.82.0",
+    "serverless": "^3.25.1",
     "serverless-offline": "^6.7.0",
     "serverless-prune-plugin": "^1.4.3",
     "uglifyify": "^5.0.2"
